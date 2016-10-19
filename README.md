@@ -1,24 +1,10 @@
-# README
+Smartmedic is an online platform for doctors to interact with patients and share patient details.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Built on Ruby on Rails v5, it uses MongoDB for storing data, harnessing the power of NoSQL Databases.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Features Planned:
+  - Disease Lookup
+  - Drug Lookup
+  - Native apps for Windows 10. iOS and Android.
+  - Push Notifications using Node JS
+  - Chat
