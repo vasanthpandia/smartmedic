@@ -1,0 +1,35 @@
+$sizes: xs, sm, md, lg;
+$min-widths: 0, $screen-sm-min, $screen-md-min, $screen-lg-min;
+$directions: top, bottom, left, right;
+
+@for $i from 1 through length($sizes) {
+  $size: nth($sizes, $i);
+  @media (min-width: nth($min-widths, $i)) {
+    @for $j from 1 through 10 {
+      $height: $j * 5;
+      .spacer-#{$size}-#{$height} {
+        height: $height * 1px;
+      }
+    }
+  }
+}
+
+@for $i from 1 through length($directions) {
+  $direction: nth($directions, $i);
+  @for $j from 1 through 10 {
+    $height: $j * 5;
+    .element-spacer-#{$direction}-#{$height} {
+      margin-#{$direction}: $height * 1px;
+    }
+  }
+}
+
+@for $i from 1 through length($directions) {
+  $direction: nth($directions, $i);
+  @for $j from 1 through 10 {
+    $height: $j * 5;
+    .element-spacer-negative-#{$direction}-#{$height} {
+      margin-#{$direction}: $height * -1px;
+    }
+  }
+}

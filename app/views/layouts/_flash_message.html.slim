@@ -1,0 +1,6 @@
+- flash.each do |key, msg|
+  - if (msg.is_a?(String) && !key.to_s.eql?('inline'))
+    - type = convert_to_bootstrap_type(key)
+    .alert.alert-dismissable.alert-flash *{ class: "alert-#{type}" }
+      = msg
+      button.close type="button" data-dismiss="alert" &times;

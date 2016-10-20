@@ -7,4 +7,8 @@ class Appointment
 
   field :start_time, type: DateTime
   field :duration, type: Integer
+
+  validates :doctor, presence: true
+  validates :patient, presence: true
+  validates :start_time, presence: true
 end

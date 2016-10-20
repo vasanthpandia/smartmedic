@@ -7,4 +7,8 @@ class Prescription
 
   field :drugs, type: Hash
   field :lab_tests, type: Hash
+
+  validates :patient, presence: true
+  validates :doctor, presence: true
+  validates :appointment, presence: true
 end
