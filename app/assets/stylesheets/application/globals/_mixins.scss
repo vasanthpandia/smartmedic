@@ -1,0 +1,24 @@
+@mixin font($font, $weight) {
+  font-family: $font;
+  font-weight: $weight;
+}
+
+@mixin roboto-thin {
+  @include font($roboto, 100)
+}
+
+@mixin roboto-light {
+  @include font($roboto, 300);
+}
+
+@mixin roboto-normal {
+  @include font($roboto, 400);
+}
+
+@mixin roboto-medium {
+  @include font($roboto, 500);
+}
+
+@mixin roboto-bold {
+  @include font($roboto, 700);
+}
