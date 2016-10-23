@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   get :dashboard, to: 'pages#dashboard', as: :dashboard
 
-  devise_for :patients
-  devise_for :doctors
+  devise_for :patients, controllers: { sessions: 'patients/sessions', registrations: 'patients/registrations' }
+  devise_for :doctors, controllers: { sessions: 'doctors/sessions', registrations: 'doctors/registrations' }
 
   resources :appointments
   resources :prescriptions

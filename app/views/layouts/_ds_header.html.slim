@@ -1,0 +1,18 @@
+header#header
+  nav.navbar.navbar-default
+    .container-fluid
+      .spacer-md-30.spacer-sm-30
+      .navbar-header
+        button.navbar-toggle.collapsed aria-expanded="false" data-target="#header-collapse" data-toggle="collapse" type="button"
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        = link_to 'Smart Medic', root_path, class: 'navbar-brand'
+
+      #header-collapse.collapse.navbar-collapse
+        .spacer-md-20
+        ul.nav.navbar-nav.navbar-right
+          li = link_to 'Blog', '#', class: 'text-uppercase'
+          li = link_to 'Login Doctor', new_doctor_session_path, class: 'text-uppercase'
+          li = link_to 'Login Patient', new_patient_session_path, class: 'text-uppercase'

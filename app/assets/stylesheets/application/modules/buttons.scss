@@ -1,0 +1,21 @@
+.btn {
+  border-radius: 50px;
+  a {
+    padding: 0 12px;
+    color: $white;
+    line-height: 38px;
+  }
+}
+
+.btn-large {
+  background-color: $deep-sky-blue;
+}
+
+.btn-hollow {
+  background-color: $purple-heart;
+  border-color: $white;
+  border-width: 2px;
+  &:hover {
+    border-color: $deep-lilac;
+  }
+}

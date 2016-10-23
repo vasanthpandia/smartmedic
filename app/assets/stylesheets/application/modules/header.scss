@@ -1,0 +1,59 @@
+#header {
+  @include roboto-normal;
+  font-size: 18px;
+
+  .navbar {
+    background-color: $black;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+
+    .navbar-nav {
+
+      li a {
+
+        padding-top: 0;
+
+        color: $white;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .navbar-brand {
+    margin: 0;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    .navbar-default .navbar-toggle {
+      background-color: $black;
+      border: none;
+
+      .icon-bar {
+        background-color: $white;
+        height: 3px;
+      }
+
+      &:focus {
+        background-color: $black;
+      }
+
+      &:hover {
+        background-color: $black;
+      }
+    }
+
+    .navbar-default .navbar-collapse {
+      border: none;
+    }
+  }
+
+  @media (max-width: $screen-sm-min) {
+    .navbar-toggle {
+      margin-top: 50px;
+    }
+  }
+}
