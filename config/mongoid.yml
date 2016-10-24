@@ -131,12 +131,6 @@ development:
     # environment. The Mongoid logger will be set to the Rails logger
     # otherwise.(default: :info)
     # log_level: :info
-production:
-  clients:
-    default:
-      uri: <%= ENV['MONGODB_URI'] %>
-        options:
-          connection_timeout: 15
 test:
   clients:
     default:
@@ -147,3 +141,8 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGOLAB_URI'] %>
