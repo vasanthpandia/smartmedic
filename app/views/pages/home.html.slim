@@ -1,9 +1,12 @@
 section.registrations
   .container-fluid
     .row
+      .spacer-sm-50
+      .spacer-sm-50
+    .row
       .col-sm-6
-        .jumbotron
-          = link_to 'Register as Doctor', new_doctor_registration_path
+        .btn.center-block
+          = link_to 'Register as Doctor', new_doctor_registration_path, class: 'btn btn-large text-center'
       .col-sm-6
-        .jumbotron
-          = link_to 'Register as Patient', new_patient_registration_path
+        .btn.center-block
+          = link_to 'Register as Patient', new_patient_registration_path, class: 'btn btn-large text-center'

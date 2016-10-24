@@ -1,0 +1,43 @@
+.form {
+
+  input[type=submit] {
+    @include center-block;
+    color: $white;
+    font-size: 22px;
+  }
+
+  input[type=text], input[type=email], textarea, input[type=password] {
+    @include center-block;
+    border-radius: 50px;
+    width: 650px;
+    height: 45px;
+    margin: 10px auto;
+    color: $deep-sky-blue;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    @media (max-width: $screen-xs-max) {
+      width: 100%;
+    }
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  form input[type=text], input[type=email], textarea {
+    &::-webkit-input-placeholder {
+      color: $black;
+    }
+    &:-moz-placeholder {
+      color: $black;
+    }
+    &::-moz-placeholder {
+      color: $black;
+    }
+    &:-ms-input-placeholder {
+      color: $black;
+    }
+
+  }
+}

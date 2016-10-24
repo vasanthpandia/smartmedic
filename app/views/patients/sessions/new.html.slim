@@ -1,0 +1,19 @@
+h2.text-center Login
+.spacer-sm-50
+
+.form
+
+  = simple_form_for resource, as: resource_name, url: patient_session_path(resource_name) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email'
+      = f.input :password, required: true, label: false, placeholder: 'Password'
+      = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+
+    .spacer-sm-30
+
+    .form-actions
+      = f.button :submit, 'Login', class: 'btn btn-large'
+
+
