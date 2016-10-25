@@ -6,9 +6,9 @@
     font-size: 22px;
   }
 
-  input[type=text], input[type=email], textarea, input[type=password] {
+  input[type=text], input[type=email], textarea, input[type=password], input[type=tel] {
     @include center-block;
-    border-radius: 50px;
+    border: none;
     width: 650px;
     height: 45px;
     margin: 10px auto;

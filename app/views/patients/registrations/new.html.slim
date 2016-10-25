@@ -7,9 +7,14 @@ h2.text-center Sign up
     = f.error_notification
 
     .form-inputs
+      = f.input :first_name, label: false, placeholder: 'First Name'
+      = f.input :last_name, label: false, placeholder: 'Last Name'
       = f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email'
+      = f.input :phone_number, label: false, placeholder: 'Phone Number'
       = f.input :password, required: true, label: false, placeholder: 'Password'
-      = f.input :password_conformation, required: true, label: false, placeholder: 'Password Confirmation'
+      = f.input :password_confirmation, required: true, label: false, placeholder: 'Password Confirmation'
+      = f.input :date_of_birth, as: :date_picker, label: false
+      = f.input :known_medical_conditions, as: :text, label: false, placeholder: 'Education'
 
     .spacer-sm-30
 

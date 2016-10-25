@@ -3,7 +3,7 @@ h2.text-center Sign up
 
 .form
 
-  = simple_form_for resource, as: resource_name, url: doctor_session_path(resource_name) do |f|
+  = simple_form_for resource, as: resource_name, url: doctor_session_path do |f|
     = f.error_notification
 
     .form-inputs

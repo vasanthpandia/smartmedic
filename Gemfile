@@ -17,6 +17,9 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'turbolinks'
 gem 'font-awesome-rails'
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem 'simple-form-datepicker'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
 # Uploads
 gem 'fog'

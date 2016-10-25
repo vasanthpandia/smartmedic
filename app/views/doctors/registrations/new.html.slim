@@ -3,13 +3,20 @@ h2.text-center Sign up
 
 .form
 
-  = simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+  = simple_form_for @doctor, url: doctor_registration_path do |f|
     = f.error_notification
 
     .form-inputs
+      = f.input :first_name, label: false, placeholder: 'First Name'
+      = f.input :last_name, label: false, placeholder: 'Last Name'
       = f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email'
+      = f.input :phone_number, required: true, label: false, placeholder: 'Phone Number'
       = f.input :password, required: true, label: false, placeholder: 'Password'
-      = f.input :password_conformation, required: true, label: false, placeholder: 'Password Confirmation'
+      = f.input :password_confirmation, required: true, label: false, placeholder: 'Password Confirmation'
+      = f.input :date_of_birth, as: :date_picker, label: false
+      = f.input :education, as: :text, label: false, placeholder: 'Education'
+      = f.input :experience, as: :text, label: false, placeholder: 'Experience'
+      = f.input :specialization, as: :text,  label: false, placeholder: 'Specialization'
 
     .spacer-sm-30
 

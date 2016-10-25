@@ -2,8 +2,8 @@ class Patient < User
   field :first_name, type: String
   field :last_name, type: String
   field :phone_number, type: String
-  field :date_of_birth, type: Integer
-  field :known_medical_conditions, type: Hash
+  field :date_of_birth, type: Date
+  field :known_medical_conditions, type: String
 
   has_many :prescriptions
   has_many :appointments

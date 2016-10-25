@@ -3,14 +3,19 @@ class Patients::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @patient = Patient.new
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @patient = Patient.new(sign_up_params)
+    if @patient.save
+      redirect_to dashboard_path, notice: 'Registration Successful'
+    else
+      redirect_to new_patient_registrations_path, flash: 'Registration Failed'
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -36,12 +41,11 @@ class Patients::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def sign_up_params
+    params.require(:patient).permit([:first_name, :last_name, :email, :password, :password_confirmation, :date_of_birth, :phone_number, :known_medical_conditions])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
