@@ -12,4 +12,8 @@ class Patient < User
   validates :last_name, presence: true
   validates :date_of_birth, presence: true
   validates :phone_number, presence: true
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

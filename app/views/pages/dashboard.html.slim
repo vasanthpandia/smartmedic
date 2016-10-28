@@ -1,1 +1,22 @@
-p Hello
+#dashboard
+  section
+    .container-fluid
+      .row
+        .col-sm-4
+          - if @appointments.blank?
+            p No appointments found.
+          - else
+            - @appointments.each do |appointment|
+              .appointment.jumbotron
+                .row
+                  .col-xs-6
+                    p = 'Patient : ' + appointment.patient.name
+                    p = 'Time : ' + appointment.start_time.to_formatted_s(:short)
+                    p = 'Duration : ' + appointment.duration.to_s
+                  .col-xs-3
+                    = link_to 'Delete', appointment_path(appointment.id), method: :delete, class: 'btn btn-large'
+                  .col-xs-3
+                    = link_to 'Edit', edit_appointment_path(appointment.id), class: 'btn btn-large'
+        .col-sm-4
+
+        .col-sm-4
