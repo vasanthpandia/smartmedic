@@ -13,13 +13,12 @@ header#header
       #header-collapse.collapse.navbar-collapse
         .spacer-md-20
         ul.nav.navbar-nav.navbar-right
-          li = link_to 'Blog', '#', class: 'text-uppercase'
           - if signed_in?
-            li = link_to "Hello #{current_user.first_name} #{current_user.last_name}", '#'
+            li = link_to "Hello #{current_user.first_name} #{current_user.last_name}", profile_path
             - if (current_user_role == 'Doctor')
               li = link_to 'Sign Out', destroy_doctor_session_path, method: :delete
             - else
               li = link_to 'Sign Out', destroy_patient_session_path, method: :delete
           - else
             li = link_to 'Login Doctor', new_doctor_session_path, class: 'text-uppercase'
-            li = link_to 'Login Patient', new_patient_session_path, class: 'text-uppercase'
+            / li = link_to 'Login Patient', new_patient_session_path, class: 'text-uppercase'

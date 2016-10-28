@@ -6,6 +6,7 @@ gem 'mongoid', '~> 6'
 gem 'bson_ext'
 gem 'puma'
 gem 'foreman'
+gem 'mongoid-autoinc'
 
 # View
 gem 'slim-rails'

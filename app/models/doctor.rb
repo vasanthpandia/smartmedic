@@ -16,4 +16,8 @@ class Doctor < User
   validates :phone_number, presence: true
   validates :education, presence: true
   validates :specialization, presence: true
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end
