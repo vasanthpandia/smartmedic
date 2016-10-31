@@ -8,14 +8,8 @@ class Doctors::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  def create
-    @doctor = Doctor.new(sign_up_params)
-    if @doctor.save
-      redirect_to dashboard_path, notice: 'Registration Successful'
-    else
-      redirect_to new_doctor_registrations_path, flash: 'Registration Failed'
-    end
-  end
+  # def create
+  # end
 
   # GET /resource/edit
   # def edit

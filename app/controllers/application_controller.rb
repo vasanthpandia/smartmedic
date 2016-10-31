@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     redirect_to new_doctor_session_path, notice: 'Please login.'
   end
 
+  [:sign_up, :sign_in].each do |action|
+    define_method("after_#{action}_path_for") { |resource| dashboard_path }
+  end
+
 end
