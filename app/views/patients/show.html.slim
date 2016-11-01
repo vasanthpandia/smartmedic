@@ -1,0 +1,18 @@
+#profile
+  section.container-fluid
+    .details.jumbotron
+      p = @patient.name
+      p = @patient.class.to_s
+      p = @patient.email
+      p = @patient.phone_number
+    .row
+      .col-sm-6
+        - @patient.appointments.each do |appointment|
+          .details.jumbotron
+            p = appointment.doctor.name
+            p = appointment.start_time.to_formatted_s(:short)
+            p = appointment.duration.to_s
+      .col-sm-6
+        - @patient.prescriptions.each do |prescription|
+          .details.jumbotron
+            p = prescription.id

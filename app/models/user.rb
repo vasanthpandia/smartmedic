@@ -1,5 +1,8 @@
+require 'autoinc'
+
 class User
   include Mongoid::Document
+  include Mongoid::Autoinc
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -24,6 +27,9 @@ class User
   field :last_sign_in_ip,    type: String
 
   field :type, type: String
+  field :uid
+
+  increments :uid
 
   ## Confirmable
   # field :confirmation_token,   type: String

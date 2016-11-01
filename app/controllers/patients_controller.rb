@@ -8,6 +8,6 @@ class PatientsController < ApplicationController
   protected
 
   def find_patient
-    @patient = Patient.where(id: params[:id]).last
+    @patient = Patient.where(id: params[:id]).includes(:appointments, :prescriptions).last
   end
 end
