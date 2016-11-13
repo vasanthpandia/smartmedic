@@ -1,0 +1,8 @@
+.form
+  = simple_form_for @appointment do |f|
+    .form-inputs
+      = f.input :patient, as: :select, collection: Patient.all.map { |patient| [patient.email, patient.id] }
+      = f.input :start_time, label: false, as: :datetime_picker
+      = f.input :duration, label: false, placeholder: 'Duration'
+    .form-actions
+    = f.button :submit, 'Create', class: 'btn-large'

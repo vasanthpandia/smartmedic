@@ -18,5 +18,7 @@
                   .col-xs-3
                     = link_to 'Delete', appointment_path(appointment.id), method: :delete, class: 'btn btn-large'
         .col-sm-4
+          .spacer-sm-50
+          = render 'appointment', locals: @appointment
 
         .col-sm-4

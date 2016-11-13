@@ -8,7 +8,10 @@ header#header
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        = link_to 'Smart Medic', root_path, class: 'navbar-brand'
+        - if signed_in?
+          = link_to 'Smart Medic', dashboard_path, class: 'navbar-brand'
+        - else
+          = link_to 'Smart Medic', root_path, class: 'navbar-brand'
 
       #header-collapse.collapse.navbar-collapse
         .spacer-md-20

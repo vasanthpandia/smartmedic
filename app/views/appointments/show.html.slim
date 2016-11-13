@@ -1,0 +1,8 @@
+section#appointments
+  .container-fluid
+    .spacer-sm-50
+    .row
+      h1 Appointment Details
+      p = @appointment.patient.name
+      p = @appointment.duration
+      p = @appointment.start_time.to_formatted_s(:short)

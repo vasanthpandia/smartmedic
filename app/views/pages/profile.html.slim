@@ -5,3 +5,9 @@
       p = @user.class.to_s
       p = @user.email
       p = @user.phone_number
+    .spacer-sm-50
+    h3 Patients
+    .details.jumbotron
+      - @patients.each do |patient|
+        p = patient.name
+        p = patient.email
