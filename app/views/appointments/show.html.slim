@@ -2,7 +2,15 @@ section#appointments
   .container-fluid
     .spacer-sm-50
     .row
-      h1 Appointment Details
-      p = @appointment.patient.name
-      p = @appointment.duration
-      p = @appointment.start_time.to_formatted_s(:short)
+      .col-sm-6
+        .jumbotron
+          h1 Appointment Details
+          p = @appointment.patient.name
+          p = @appointment.duration
+          p = @appointment.start_time.to_formatted_s(:short)
+      .col-sm-6
+        - if @prescription.new_record?
+          = render 'prescription', locals: @prescription
+        - else
+          = link_to 'View Prescription', prescription_path(@prescription), class: 'btn btn-large'
+

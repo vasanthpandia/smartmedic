@@ -13,7 +13,8 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @prescription = @appointment.prescription
+    @appointment.prescription.present?
+    @prescription = @appointment.prescription.present? ? @appointment.prescription : @appointment.build_prescription
   end
 
   def edit

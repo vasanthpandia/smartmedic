@@ -1,0 +1,13 @@
+.form
+  = simple_form_for @drug do |f|
+    .form-inputs
+      = f.hidden_field :prescription, as: :select, value: @drug.prescription.id
+      = f.input :name
+      = f.simple_fields_for :dose do |d|
+        = d.input :morning
+        = d.input :afternoon
+        = d.input :evening
+        = d.input :night
+      = f.input :notes
+    .form-actions
+    = f.button :submit, 'Create', class: 'btn-large'

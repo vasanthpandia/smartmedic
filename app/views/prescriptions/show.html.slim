@@ -1,0 +1,32 @@
+section#prescription
+  .container-fluid
+    .spacer-sm-50
+    .row
+      .col-sm-6
+        .jumbotron
+          p = @prescription.appointment.doctor.name
+          p = @prescription.appointment.patient.name
+        .spacer-sm-50
+        .jumbotron
+          = render 'drug', locals: @drug
+      .col-sm-6
+        .jumbotron
+          table
+            thead
+              tr
+                th Name
+                th Morning
+                th Afternoon
+                th Evening
+                th Night
+                th Notes
+            tbody
+              - @drugs.each do |drug|
+                - if !drug.new_record?
+                  tr
+                    td = drug.name
+                    td = drug.dose[:morning] || 0
+                    td = drug.dose[:afternoon] || 0
+                    td = drug.dose[:evening] || 0
+                    td = drug.dose[:night] || 0
+                    td = drug.notes

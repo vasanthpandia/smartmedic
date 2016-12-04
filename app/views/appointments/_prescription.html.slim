@@ -1,0 +1,6 @@
+.form
+  = simple_form_for @prescription do |f|
+    .form-inputs
+      = f.hidden_field :appointment, as: :select, value: @prescription.appointment.id
+    .form-actions
+    = f.button :submit, 'Create', class: 'btn-large'
