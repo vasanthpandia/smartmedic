@@ -27,6 +27,9 @@ gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# Serializer
+gem 'active_model_serializers', '~> 0.10.0'
+
 # Auth
 gem 'devise'
 gem 'cancancan'
